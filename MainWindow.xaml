@@ -3,7 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Метеостанция - сбор данных" Height="500" Width="700"
         WindowStartupLocation="CenterScreen">
-    <Grid Background="#f0f0f0">
+    <Grid x:Name="BackgroundGrid" Background="#f0f0f0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="32*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -12,14 +16,14 @@
         </Grid.RowDefinitions>
 
         <!-- Подключенные устройства -->
-        <Border Grid.Row="0" Background="White" Margin="10,10,10,5" Padding="15" BorderThickness="0,0,0,1" BorderBrush="#e0e0e0">
+        <Border x:Name="ConnectDevice" Grid.Row="0" Background="White" Margin="10,10,10,5" Padding="15" BorderThickness="0,0,0,1" BorderBrush="#e0e0e0" Grid.ColumnSpan="2">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Column="0" Text="Подключенные устройства" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock x:Name="ConnectText" Grid.Column="0" Text="Подключенные устройства" FontWeight="Bold" VerticalAlignment="Center"/>
 
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
                     <ComboBox x:Name="DeviceComboBox" Width="150" Margin="5,0" Padding="5"
@@ -35,7 +39,7 @@
         </Border>
 
         <!-- Текущие показания -->
-        <Border Grid.Row="1" Background="White" Margin="10,5,10,5" Padding="15">
+        <Border x:Name="Measure" Grid.Row="1" Background="White" Margin="10,5,10,5" Padding="15" Grid.ColumnSpan="2">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -44,14 +48,14 @@
 
                 <!-- Температура -->
                 <StackPanel Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center">
-                    <TextBlock Text="Температура" FontSize="14" Foreground="#666" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="Temperature" Text="Температура" FontSize="14" Foreground="#666" HorizontalAlignment="Center"/>
                     <TextBlock x:Name="TemperatureText" Text="0 °C" FontSize="24" FontWeight="Bold" 
                                HorizontalAlignment="Center" Margin="0,5,0,0"/>
                 </StackPanel>
 
                 <!-- Влажность -->
                 <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center">
-                    <TextBlock Text="Влажность" FontSize="14" Foreground="#666" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="Humidity" Text="Влажность" FontSize="14" Foreground="#666" HorizontalAlignment="Center"/>
                     <TextBlock x:Name="HumidityText" Text="0 %" FontSize="24" FontWeight="Bold" 
                                HorizontalAlignment="Center" Margin="0,5,0,0"/>
                 </StackPanel>
@@ -59,14 +63,14 @@
         </Border>
 
         <!-- Таблица изменений -->
-        <Border Grid.Row="2" Background="White" Margin="10,5,10,5" Padding="15">
+        <Border x:Name="BackgroundTable" Grid.Row="2" Background="White" Margin="10,5,10,5" Padding="15" Grid.ColumnSpan="2">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Text="Таблица изменений" FontWeight="Bold" Margin="0,0,0,10"/>
+                <TextBlock x:Name="TableName" Grid.Row="0" Text="Таблица изменений" FontWeight="Bold" Margin="0,0,0,10"/>
 
                 <DataGrid Grid.Row="1" x:Name="DataGrid" AutoGenerateColumns="False" 
                          HeadersVisibility="Column" BorderThickness="1" BorderBrush="#e0e0e0">
@@ -80,7 +84,7 @@
         </Border>
 
         <!-- Панель управления и индикаторы -->
-        <Border Grid.Row="3" Background="White" Margin="10,5,10,10" Padding="15">
+        <Border x:Name="Indicators" Grid.Row="3" Background="White" Margin="10,5,10,10" Padding="15" Grid.ColumnSpan="2">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -101,15 +105,17 @@
                 <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
                     <StackPanel Orientation="Horizontal" Margin="10,0">
                         <Ellipse x:Name="TempIndicator" Width="12" Height="12" Fill="Gray" Margin="0,0,5,0"/>
-                        <TextBlock Text="Температура" Foreground="#666" Margin="0,0,10,0"/>
+                        <TextBlock x:Name="Temp" Text="Температура" Foreground="#666" Margin="0,0,10,0"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10,0">
                         <Ellipse x:Name="HumidityIndicator" Width="12" Height="12" Fill="Gray" Margin="0,0,5,0"/>
-                        <TextBlock Text="Влажность" Foreground="#666" Margin="0,0,10,0"/>
+                        <TextBlock x:Name="Hum" Text="Влажность" Foreground="#666" Margin="0,0,10,0"/>
                     </StackPanel>
-                    
+
                 </StackPanel>
             </Grid>
         </Border>
+        <Button Content="☾" HorizontalAlignment="Left" Margin="562,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="30" Click="Button_Click" Width="26" Background="Black" Foreground="White" FontSize="18" Grid.Column="1"/>
+        <Button Content="☀" HorizontalAlignment="Left" Margin="525,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="25" Height="30" Foreground="#FFDACA20" Background="Black" Grid.Column="1" Click="Button_Click_1"/>
     </Grid>
 </Window>

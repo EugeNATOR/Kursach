@@ -182,6 +182,42 @@ namespace MeteoStation
                 }
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            BackgroundGrid.Background = new SolidColorBrush(Color.FromRgb(22, 50, 58));
+            ConnectDevice.Background = new SolidColorBrush(Color.FromRgb(22, 50, 58));
+            Measure.Background = new SolidColorBrush(Color.FromRgb(22, 50, 58));
+            BackgroundTable.Background = new SolidColorBrush(Color.FromRgb(22, 50, 58));
+            TableName.Background = new SolidColorBrush(Color.FromRgb(22, 50, 58));
+            Indicators.Background = new SolidColorBrush(Color.FromRgb(22, 50, 58));
+            ConnectText.Foreground = new SolidColorBrush(Colors.White);
+            TemperatureText.Foreground = new SolidColorBrush(Colors.White);
+            HumidityText.Foreground = new SolidColorBrush(Colors.White);
+            TableName.Foreground = new SolidColorBrush(Colors.White);
+            Temp.Foreground = new SolidColorBrush(Colors.White);
+            Hum.Foreground = new SolidColorBrush(Colors.White);
+            Temperature.Foreground = new SolidColorBrush(Colors.White);
+            Humidity.Foreground = new SolidColorBrush(Colors.White);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            BackgroundGrid.Background = new SolidColorBrush(Color.FromRgb(240, 240, 240));
+            ConnectDevice.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+            Measure.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+            BackgroundTable.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+            TableName.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+            Indicators.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+            ConnectText.Foreground = new SolidColorBrush(Colors.Black);
+            TemperatureText.Foreground = new SolidColorBrush(Colors.Black);
+            HumidityText.Foreground = new SolidColorBrush(Colors.Black);
+            TableName.Foreground = new SolidColorBrush(Colors.Black);
+            Temp.Foreground = new SolidColorBrush(Colors.Black);
+            Hum.Foreground = new SolidColorBrush(Colors.Black);
+            Temperature.Foreground = new SolidColorBrush(Color.FromRgb(102, 102, 102));
+            Humidity.Foreground = new SolidColorBrush(Color.FromRgb(102, 102, 102));
+        }
     }
 
     public class WeatherData : INotifyPropertyChanged
