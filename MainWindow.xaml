@@ -5,8 +5,9 @@
         WindowStartupLocation="CenterScreen">
     <Grid x:Name="BackgroundGrid" Background="#f0f0f0">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="21*"/>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="640*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -16,7 +17,7 @@
         </Grid.RowDefinitions>
 
         <!-- Подключенные устройства -->
-        <Border x:Name="ConnectDevice" Grid.Row="0" Background="White" Margin="10,10,10,5" Padding="15" BorderThickness="0,0,0,1" BorderBrush="#e0e0e0" Grid.ColumnSpan="2">
+        <Border x:Name="ConnectDevice" Grid.Row="0" Background="White" Margin="10,10,10,5" Padding="15" BorderThickness="0,0,0,1" BorderBrush="#e0e0e0" Grid.ColumnSpan="3">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -39,7 +40,7 @@
         </Border>
 
         <!-- Текущие показания -->
-        <Border x:Name="Measure" Grid.Row="1" Background="White" Margin="10,5,10,5" Padding="15" Grid.ColumnSpan="2">
+        <Border x:Name="Measure" Grid.Row="1" Background="White" Margin="10,5,10,5" Padding="15" Grid.ColumnSpan="3">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -63,7 +64,7 @@
         </Border>
 
         <!-- Таблица изменений -->
-        <Border x:Name="BackgroundTable" Grid.Row="2" Background="White" Margin="10,5,10,5" Padding="15" Grid.ColumnSpan="2">
+        <Border x:Name="BackgroundTable" Grid.Row="2" Background="White" Margin="10,5,10,5" Padding="15" Grid.ColumnSpan="3">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -84,7 +85,7 @@
         </Border>
 
         <!-- Панель управления и индикаторы -->
-        <Border x:Name="Indicators" Grid.Row="3" Background="White" Margin="10,5,10,10" Padding="15" Grid.ColumnSpan="2">
+        <Border x:Name="Indicators" Grid.Row="3" Background="White" Margin="10,5,10,10" Padding="15" Grid.ColumnSpan="3">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -115,7 +116,7 @@
                 </StackPanel>
             </Grid>
         </Border>
-        <Button Content="☾" HorizontalAlignment="Left" Margin="562,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="30" Click="Button_Click" Width="26" Background="Black" Foreground="White" FontSize="18" Grid.Column="1"/>
-        <Button Content="☀" HorizontalAlignment="Left" Margin="525,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="25" Height="30" Foreground="#FFDACA20" Background="Black" Grid.Column="1" Click="Button_Click_1"/>
+        <Button Content="☾" HorizontalAlignment="Left" Margin="562,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="30" Click="Button_Click" Width="26" Background="Black" Foreground="White" FontSize="18" Grid.Column="2"/>
+        <Button Content="☀" HorizontalAlignment="Left" Margin="525,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="25" Height="30" Foreground="#FFDACA20" Background="Black" Grid.Column="2" Click="Button_Click_1"/>
     </Grid>
 </Window>
