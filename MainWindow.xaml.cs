@@ -44,9 +44,9 @@ namespace MeteoStation
 
         private void InitializeDevices()
         {
-            AvailableDevices.Add(new Device { Id = 1, Name = "Датчик 1 (USB)" });
-            AvailableDevices.Add(new Device { Id = 2, Name = "Датчик 2 (Bluetooth)" });
-            AvailableDevices.Add(new Device { Id = 3, Name = "Датчик 3 (Wi-Fi)" });
+            AvailableDevices.Add(new Device { Id = 1, Name = "Датчик 1 " });
+            AvailableDevices.Add(new Device { Id = 2, Name = "Датчик 2 " });
+            AvailableDevices.Add(new Device { Id = 3, Name = "Датчик 3 " });
 
             if (AvailableDevices.Count > 0)
                 DeviceComboBox.SelectedIndex = 0;
